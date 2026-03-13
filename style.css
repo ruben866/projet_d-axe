@@ -1,0 +1,205 @@
+/* Bordure autour des images */
+.img-btn {
+  border: 3px solid #444;
+  border-radius: 10px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); /* effet d'ombre autour du cadre*/
+  padding: 4px;
+  background: #000000;
+  transition: box-shadow 0.3s;
+}
+.img-btn:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/* Bloc texte sous chaque image */
+.img-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  border: 3px solid #444;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+body{
+margin:0 ; /*marge a 0 pour tous centrer*/
+font-family:Arial, sans-serif;
+scroll-behavior:smooth; /*défilement vers l'élément en douceur*/
+}
+body.dark-mode { /*dark mode*/
+  background: #181818;
+  color: #f1f1f1;
+}
+.navbar.dark-mode {
+  background: #222;
+}
+.menu a.dark-mode {
+  color: #f1f1f1;
+}
+.section.dark-mode {
+  background: #222;
+  color: #f1f1f1;
+}
+
+a {
+  color: inherit; /* garde la couleur normale du texte */
+  text-decoration: none; /* enlève le soulignement */
+}
+
+a:hover { 
+  color: red; /* couleur au survol */
+}
+
+.navbar{ 
+display:flex; 
+justify-content:space-between;
+align-items:center;
+background:#111; /*couleur de la bare du fond de la barre de tache*/
+padding:10px 5%;
+position:fixed;
+top:0;
+width:100%;
+box-sizing:border-box; /*hauteur*/
+z-index:1000; /*ordre des calques*/
+}
+
+.logo img{
+height:45px; /*taille de l'image*/
+} 
+
+.menu{
+display:flex;
+gap:25px; /*taille du menu*/
+}
+
+.menu a{
+color:white;
+text-decoration:dotted;
+font-size:18px;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#00bfff;
+}
+
+@media (max-width: 900px) { /*pour que la page s'adapte et utilise tout l'ecrant peu importe l'odinateur*/
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding: 18px 24px;
+    z-index: 1100;
+  }
+  .menu.active {
+    display: flex;
+  }
+}
+
+.section{
+min-height:100vh; /*hauteur de la section qui prend tout l'ecran*/
+padding-top:100px;
+text-align:center; /*alignement du texte*/
+padding-left:20px;
+padding-right:20px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: #222;
+  background: none;
+  border-radius: 0px;
+  box-shadow: none;
+  margin: 40px auto;
+  max-width: 700px;
+  padding: 15px 25px;
+  animation: fadeInDescSimple 1.2s ease;
+  position: relative;
+}
+
+.description h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 18px;
+  color: #b22222;
+  letter-spacing: 2px;
+  animation: fadeInDescSimple 1.2s ease;
+  margin-top: 32px;
+}
+
+.description p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15em;
+  line-height: 1.7;
+  margin-top: 0;
+  animation: fadeInDescSimple 1.2s ease;
+}
+
+@keyframes fadeInDescSimple {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.accueil{
+background:#f4f4f4; /*couleur du texte du boutton accueil*/
+}
+
+.services{
+background:#e6e6e6; /*couleur du texte du boutton services*/
+}
+
+.galerie{
+background:#d8d8d8; /*couleur du texte du boutton galerie*/
+}
+
+.contact{
+background:#cfcfcf; /*couleur du texte du boutton contact*/
+}
+
+/* pour que l'image soit cliquable */
+.cards{
+display:flex;
+justify-content:center;
+flex-wrap:wrap; /*forcer de tenir sur une seule ligne*/
+gap:30px;
+margin-top:40px;
+}
+
+.cards img{
+width:250px;
+border-radius:10px;
+cursor:pointer; /* survol de la souris*/
+transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2); /*effets d'ombre autour du cadre*/
+}
+
+.cards img:hover{
+transform:scale(1.05);
+}
+
+@media (max-width:768px){ /*pour que la page s'adapte et utilise tout l'ecrant peu importe l'odinateur*/
+
+.navbar{
+flex-direction:column; 
+align-items:flex-start; /*aligne les éléments flexibles contre le bord de début principal*/
+}
+
+.menu{
+flex-direction:column;
+gap:10px;
+margin-top:10px;
+}
+
+.cards img{
+width:80%;
+max-width:300px;
+}
+
+}
